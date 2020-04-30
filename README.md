@@ -9,7 +9,7 @@ App to review a restroom experience based on cleanliness, toilet paper quality &
 ### User Story
 
 1. User can register an account
-2. User can login/logout of account
+2. User can login to their account
 3. User has the option to update their account
 4. User has the option to edit their account
 5. User can browse other reviews
@@ -35,6 +35,6 @@ CORS, PostgressSQL, Python-Flask, React & Sqlite
 
 ## Wireframes
 
+![alt text](https://i.imgur.com/4Bfkrrv.jpg)
 
-
-
+![alt text](https://i.imgur.com/cSzZlWd.jpg)
