@@ -21,8 +21,7 @@ App to review a restroom experience based on cleanliness, toilet paper quality &
  
 
 ### Models
-
-`npm run build`
+![alt text](https://i.imgur.com/JzE06MQ.png)
 
 ### Stretch Goals
 
