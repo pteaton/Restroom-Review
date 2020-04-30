@@ -21,7 +21,7 @@ App to review a restroom experience based on cleanliness, toilet paper quality &
  
 
 ### Models
-![alt text](https://i.imgur.com/JzE06MQ.png)
+![alt text](https://i.imgur.com/LyF7TbF.png)
 
 ### Stretch Goals
 
