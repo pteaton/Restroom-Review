@@ -1,15 +1,124 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import ReviewContainer from './ReviewContainer'
+import LoginRegisterForm from './LoginRegisterForm'
 
-function App() {
-  return (
-    <div className="App">
-     
-      <ReviewContainer />
+export default class App extends Component {
+
+  constructor() {
+    super()
+
+    this.state = {
+      loggedIn: false,
+      loggedInUserEmail: ''
+    }
+  }
+
+  register = async (registerInfo) => {
+    const url = process.env.REACT_APP_API_URL + "/api/v1/users/register"
+
+    try {
+      const registerResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'POST',
+        body: JSON.stringify(registerInfo),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+
+      const registerJson = await registerResponse.json()
+
+      if(registerResponse.status === 201) {
+        this.setState({
+          loggedIn: true,
+          loggedInUserEmail: registerJson.data.email
+        })
+      }
     
-    </div>
-  );
+    } catch(err) {
+      console.log(err)
+    }
+  
+  }
+
+  login = async (loginInfo) => {
+    const url = process.env.REACT_APP_API_URL + 'api/v1/users/login'
+
+    try {
+      const loginResponse = await fetch(url, {
+        credentials: 'include',
+        method: 'POST',
+        body: JSON.stringify(loginInfo),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      console.log("loginResponse", loginResponse);
+      const loginJson = await loginResponse.json()
+
+      if(loginResponse.status === 200) {
+        this.setState({
+          loggedIn: true,
+          loggedInUserEmail: loginJson.data.email
+        })
+      }
+
+    } catch(error) {
+      console.log(error)
+    }
+  }
+
+  logout = async () => {
+    try {
+      const url = process.env.REACT_APP_API_URL + '/api/v1/users/logout'
+
+      const logoutResponse = await fetch(url, {
+        credentials: 'include'
+      })
+      const logoutJson = await logoutResponse.json()
+
+      if(logoutResponse.status === 200) {
+        this.setState({
+          loggedIn: false,
+          loggedInUserEmail: ''
+        })
+      }
+    
+    } catch(error) {
+      console.log(error)
+    }
+  }
+
+  render() {
+    return(
+      <div className="App">
+      {
+        this.state.loggedIn
+        ?
+        <React.Fragment>
+
+          <ReviewContainer />
+        </React.Fragment>
+        :
+        <LoginRegisterForm
+          login={this.login}
+          register={this.register}
+        />
+      }
+      </div>
+    );
+  }
+
 }
 
-export default App;
+
+
+
+
+
+
+
+
+
+
