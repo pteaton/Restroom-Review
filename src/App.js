@@ -44,7 +44,7 @@ export default class App extends Component {
   }
 
   login = async (loginInfo) => {
-    const url = process.env.REACT_APP_API_URL + 'api/v1/users/login'
+    const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
 
     try {
       const loginResponse = await fetch(url, {
@@ -78,6 +78,7 @@ export default class App extends Component {
         credentials: 'include'
       })
       const logoutJson = await logoutResponse.json()
+      console.log("logoutJson", logoutJson)
 
       if(logoutResponse.status === 200) {
         this.setState({
@@ -103,7 +104,7 @@ export default class App extends Component {
         </React.Fragment>
         :
         <LoginRegisterForm
-          login={this.login}
+          login={this.login} 
           register={this.register}
         />
       }

@@ -3,7 +3,7 @@ import { Form, Button, Label, Segment } from 'semantic-ui-react'
 
 export default class NewReviewForm extends Component {
 
-	constructor() {
+	constructor(props) {
 		super(props)
 
 		this.state = {
