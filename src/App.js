@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ReviewContainer from './ReviewContainer'
 import LoginRegisterForm from './LoginRegisterForm'
+import Header from './Header'
 
 export default class App extends Component {
 
@@ -97,7 +98,7 @@ export default class App extends Component {
         this.state.loggedIn
         ?
         <React.Fragment>
-
+          <Header email={this.state.loggedInUserEmail} logout={this.logout} />
           <ReviewContainer />
         </React.Fragment>
         :
