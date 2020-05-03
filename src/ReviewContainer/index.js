@@ -49,9 +49,9 @@ export default class ReviewContainer extends Component {
 			const deleteReviewJson = await deleteReviewResponse.json()
 			console.log("deleteReviewJson", deleteReviewJson);
 
-			if(deleteReviewResponse.status == 200) {
+			if(deleteReviewResponse.status === 200) {
 				this.setState({
-					reviews: this.state.reviews.filter(review => review.id != idOfReviewToDelete)
+					reviews: this.state.reviews.filter(review => review.id !== idOfReviewToDelete)
 				})
 			}
 		} catch(err) {
@@ -112,9 +112,9 @@ export default class ReviewContainer extends Component {
 			const updateReviewJson = await updateReviewResponse.json()
 			console.log("updateReviewJson", updateReviewJson)
 
-			if(updateReviewResponse.status == 200) {
+			if(updateReviewResponse.status === 200) {
 				const reviews = this.state.reviews
-				const indexOfReviewBeingUpdated = reviews.findIndex(review => review.id == this.state.idOfReviewToEdit)
+				const indexOfReviewBeingUpdated = reviews.findIndex(review => review.id === this.state.idOfReviewToEdit)
 				reviews[indexOfReviewBeingUpdated] = updateReviewJson.data
 				this.setState({
 					reviews: reviews,
@@ -127,11 +127,12 @@ export default class ReviewContainer extends Component {
 			console.log(err)
 		}
 
-		closeModal = () => {
-			this.setState({
-				idOfReviewToEdit: -1
-			})
-		}
+	}
+
+	closeModal = () => {
+		this.setState({
+			idOfReviewToEdit: -1
+		})
 	}
 
 
