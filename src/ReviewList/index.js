@@ -32,6 +32,13 @@ export default function ReviewList(props) {
 					>
 						Delete {review.title}
 					</Button>
+					<Button
+						basic
+						color='green'
+						onClick={ () => props.editReview(review.id)}
+					>
+						Edit {review.title}
+					</Button>
 				</Card.Content>
 			</Card>
 		)

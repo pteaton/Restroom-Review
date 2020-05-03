@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { Form, Button, Label, Segment, Modal, Header } from 'semantic-ui-react'
+import { Form, Button, Label, Modal, Header } from 'semantic-ui-react'
 import '../index.css'
 
 export default class EditReviewModal extends Component {
 
 	constructor(props) {
 		super(props)
+
+		console.log(props)
 
 		this.state = {
 			title: props.reviewToEdit.title,
