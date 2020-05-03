@@ -15,7 +15,7 @@ export default class NewReviewForm extends Component {
 
 	handleChange = (event) => {
 		this.setState({
-			[event.target.name]: event.target.valu
+			[event.target.name]: event.target.value
 		})
 	}
 

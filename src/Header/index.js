@@ -3,7 +3,7 @@ import '../index.css'
 
 export default function Header(props) {
   const headerStyle = {
-    textAlign: "right",
+    textAlign: "center",
     padding: "10px",
     backgroundColor: "lightsteelblue"
   }

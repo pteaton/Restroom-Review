@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'semantic-ui-css';
 import './App.css';
 import ReviewContainer from './ReviewContainer'
 import LoginRegisterForm from './LoginRegisterForm'
@@ -16,7 +17,7 @@ export default class App extends Component {
   }
 
   register = async (registerInfo) => {
-    const url = process.env.REACT_APP_API_URL + "/api/v1/users/register"
+    const url = process.env.REACT_APP_API_URL + "/users/register"
 
     try {
       const registerResponse = await fetch(url, {
@@ -44,7 +45,7 @@ export default class App extends Component {
   }
 
   login = async (loginInfo) => {
-    const url = process.env.REACT_APP_API_URL + '/api/v1/users/login'
+    const url = process.env.REACT_APP_API_URL + '/users/login'
 
     try {
       const loginResponse = await fetch(url, {
@@ -72,7 +73,7 @@ export default class App extends Component {
 
   logout = async () => {
     try {
-      const url = process.env.REACT_APP_API_URL + '/api/v1/users/logout'
+      const url = process.env.REACT_APP_API_URL + '/users/logout'
 
       const logoutResponse = await fetch(url, {
         credentials: 'include'

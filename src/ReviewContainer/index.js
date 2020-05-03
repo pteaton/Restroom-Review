@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReviewList from '../ReviewList'
 import NewReviewForm from '../NewReviewForm'
+import EditReviewModal from '../EditReviewModal'
 
 export default class ReviewContainer extends Component {
 
@@ -8,7 +9,8 @@ export default class ReviewContainer extends Component {
 		super(props)
 
 		this.state = {
-			reviews: []
+			reviews: [],
+			idOfReviewToEdit: -1
 		}
 	}
 
@@ -18,7 +20,8 @@ export default class ReviewContainer extends Component {
 
 	getReviews = async () => {
 		try {
-			const url = process.env.REACT_APP_API_URL + "/api/v1/reviews"
+			const url = process.env.REACT_APP_API_URL + "/api/v1/reviews/"
+			console.log(url);
 			const reviewsResponse = await fetch(url, {
 				credentials: 'include'
 			})
@@ -33,6 +36,12 @@ export default class ReviewContainer extends Component {
 			console.error("Error obtaining review data.", error)
 		}
 	}
+
+	deleteReview = async (idOfReviewToDelete) => {
+		const url = process.env.REACT_APP_API_URL + "/api/v1/reviews/"
+	}
+
+
 	
 	render() {
 		
