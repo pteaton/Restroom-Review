@@ -34,34 +34,38 @@ export default class EditReviewModal extends Component {
 				<Header>
 					<h3> Enter updated info</h3>
 				</Header>
-				<Form onSubmit={this.handleSubmit}>
-					<Form.input
-						type="text"
-						name="title"
-						value={this.state.title}
-						placeholder="Enter a title"
-						onChange={this.handleChange}
-					/>
-					<Label>Review:</Label>
-					<Form.input	
-						type="text"
-						name="review"
-						value={this.state.review}
-						placeholder="Enter a review"
-						onChange={this.handleChange}
-					/>
-					<Label>Location:</Label>
-					<Form.input
-						type="text"
-						name="location"
-						value={this.state.location}
-						placeholder="Enter a location"
-						onChange={this.handleChange}
-					/>
-					<Modal.Actions>
-						<Button type="Submit">Update Review</Button>
-					</Modal.Actions>
-				</Form>
+				<Modal.Content>
+					<Form onSubmit={this.handleSubmit}>
+						<Label>Title:</Label>
+						<Form.input
+							type="text"
+							name="title"
+							value={this.state.title}
+							placeholder="Enter a title"
+							onChange={this.handleChange}
+						/>
+						<Label>Review:</Label>
+						<Form.input	
+							type="text"
+							name="review"
+							value={this.state.review}
+							placeholder="Enter a review"
+							onChange={this.handleChange}
+						/>
+						<Label>Location:</Label>
+						<Form.input
+							type="text"
+							name="location"
+							value={this.state.location}
+							placeholder="Enter a location"
+							onChange={this.handleChange}
+						/>
+						<Modal.Actions>
+							<Button type="Submit">Update Review</Button>
+						</Modal.Actions>
+
+					</Form>
+				</Modal.Content>
 			</Modal>
 		)
 	}

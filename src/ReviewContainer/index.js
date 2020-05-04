@@ -155,7 +155,7 @@ export default class ReviewContainer extends Component {
 					&&
 					<EditReviewModal
 						key={this.state.idOfReviewToEdit}
-						reviewToEdit={this.state.review.find((review) => review.id === this.state.idOfReviewToEdit)}
+						reviewToEdit={this.state.reviews.find((review) => review.id === this.state.idOfReviewToEdit)}
 						updateReview={this.updateReview}
 						closeModal={this.closeModal}
 					/>
