@@ -20,13 +20,14 @@ export default class ReviewContainer extends Component {
 
 	getReviews = async () => {
 		try {
-			const url = process.env.REACT_APP_API_URL + "/api/v1/reviews/"
+			const url = process.env.REACT_APP_API_URL + "/reviews/"
 			console.log(url);
 			const reviewsResponse = await fetch(url, {
 				credentials: 'include'
 			})
 
 			const reviewsJson = await reviewsResponse.json()
+			console.log(reviewsJson)
 
 			this.setState({
 				reviews: reviewsJson.data
@@ -34,11 +35,12 @@ export default class ReviewContainer extends Component {
 		
 		} catch(error) {
 			console.error("Error obtaining review data.", error)
+
 		}
 	}
 
 	deleteReview = async (idOfReviewToDelete) => {
-		const url = process.env.REACT_APP_API_URL + "/api/v1/reviews/" + idOfReviewToDelete
+		const url = process.env.REACT_APP_API_URL + "/reviews/" + idOfReviewToDelete
 		console.log(url)
 		try {
 			const deleteReviewResponse = await fetch(url, {
@@ -64,7 +66,7 @@ export default class ReviewContainer extends Component {
 		console.log(reviewToAdd)
 
 		try {
-			const url = process.env.REACT_APP_API_URL + "/api/v1/reviews/"
+			const url = process.env.REACT_APP_API_URL + "/reviews/"
 			const createReviewResponse = await fetch(url, {
 				credentials: 'include',
 				method: 'POST',
@@ -96,7 +98,7 @@ export default class ReviewContainer extends Component {
 	}
 
 	updateReview = async (updatedReviewInfo) => {
-		const url = process.env.REACT_APP_API_URL + "/api/v1/reviews/" + this.state.idOfReviewToEdit
+		const url = process.env.REACT_APP_API_URL + "/reviews/" + this.state.idOfReviewToEdit
 
 
 		try {

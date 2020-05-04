@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'semantic-ui-css';
 import './App.css';
 import ReviewContainer from './ReviewContainer'
 import LoginRegisterForm from './LoginRegisterForm'
@@ -17,6 +16,7 @@ export default class App extends Component {
   }
 
   register = async (registerInfo) => {
+    console.log("register() in App.js called with the following info", registerInfo)
     const url = process.env.REACT_APP_API_URL + "/users/register"
 
     try {
@@ -28,7 +28,7 @@ export default class App extends Component {
           'Content-Type': 'application/json'
         }
       })
-
+      console.log("registerResponse", registerResponse)
       const registerJson = await registerResponse.json()
 
       if(registerResponse.status === 201) {
@@ -56,10 +56,11 @@ export default class App extends Component {
           'Content-Type': 'application/json'
         }
       })
-      console.log("loginResponse", loginResponse);
-      const loginJson = await loginResponse.json()
 
-      if(loginResponse.status === 200) {
+      const loginJson = await loginResponse.json()
+      console.log("loginJson", loginJson);
+
+      if(loginResponse.status === 201) {
         this.setState({
           loggedIn: true,
           loggedInUserEmail: loginJson.data.email
