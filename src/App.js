@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import ReviewContainer from './ReviewContainer'
-import LoginRegisterForm from './LoginRegisterForm'
-import Header from './Header'
+import ReviewContainer from './ReviewContainer';
+import LoginRegisterForm from './LoginRegisterForm';
+import Header from './Header';
 
 export default class App extends Component {
 

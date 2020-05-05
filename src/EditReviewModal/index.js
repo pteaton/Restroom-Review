@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, Button, Label, Modal, Header } from 'semantic-ui-react'
+import { Modal, Form, Button, Label, Header } from 'semantic-ui-react'
 import '../index.css'
 
 export default class EditReviewModal extends Component {
@@ -36,24 +36,24 @@ export default class EditReviewModal extends Component {
 				</Header>
 				<Modal.Content>
 					<Form onSubmit={this.handleSubmit}>
-						<Label>Title:</Label>
-						<Form.input
+						<Label> Title: </Label>
+						<Form.Input
 							type="text"
 							name="title"
 							value={this.state.title}
 							placeholder="Enter a title"
 							onChange={this.handleChange}
 						/>
-						<Label>Review:</Label>
-						<Form.input	
+						<Label> Review: </Label>
+						<Form.Input	
 							type="text"
 							name="review"
 							value={this.state.review}
 							placeholder="Enter a review"
 							onChange={this.handleChange}
 						/>
-						<Label>Location:</Label>
-						<Form.input
+						<Label> Location: </Label>
+						<Form.Input
 							type="text"
 							name="location"
 							value={this.state.location}
@@ -61,9 +61,8 @@ export default class EditReviewModal extends Component {
 							onChange={this.handleChange}
 						/>
 						<Modal.Actions>
-							<Button type="Submit">Update Review</Button>
+							<Button type="Submit">Update Review</Button> 
 						</Modal.Actions>
-
 					</Form>
 				</Modal.Content>
 			</Modal>
