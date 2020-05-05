@@ -92,6 +92,7 @@ export default class ReviewContainer extends Component {
 	}
 
 	editReview = (idOfReviewToEdit) => {
+		console.log("testing edit", idOfReviewToEdit)
 		this.setState({
 			idOfReviewToEdit: idOfReviewToEdit
 		})
@@ -110,6 +111,7 @@ export default class ReviewContainer extends Component {
 					'Content-Type': 'application/json'
 				}
 			})
+			console.log("updateReviewResponse", updateReviewResponse)
 
 			const updateReviewJson = await updateReviewResponse.json()
 			console.log("updateReviewJson", updateReviewJson)

@@ -14,13 +14,9 @@ export default function ReviewList(props) {
 						{review.title}
 					</Card.Header>
 					<Card.Meta>
-						{review.review}
-					</Card.Meta>
-					<Card.Meta>
-						{review.location}
+						Author: {review.posted_by.username}
 					</Card.Meta>
 					<Card.Description>
-						{review.title} was written about {review.location} authored by {review.posted_by.username}
 						{review.review}
 					</Card.Description>
 				</Card.Content>
