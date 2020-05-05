@@ -34,7 +34,7 @@ export default class NewReviewForm extends Component {
 	render() {
 		return(
 			<Segment>
-				<h3> Add new review:</h3>
+				<h3> Write a new review below</h3>
 				<Form onSubmit={this.handleSubmit} >
 					<Label>Title:</Label>
 					<Form.Input

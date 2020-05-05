@@ -1,4 +1,21 @@
 body {
-  background-color: lavender;
+  background-color: mistyrose;
 }
 
+h2 {
+	font-family: Coronetscript, cursive;
+	font-style: italic;
+	color: cadetblue;
+}
+
+div {
+	color: cadetblue;
+}
+
+p {
+	font-family: Coronetscript, cursive;
+}
+
+#ui-label {
+	font-family: Coronetscript, cursive;
+}

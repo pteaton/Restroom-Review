@@ -18,7 +18,7 @@ export default class EditReviewModal extends Component {
 
 	handleChange = (event) => {
 		this.setState({
-			[event.target.title]: event.target.value
+			[event.target.name]: event.target.value
 		})
 	}
 
@@ -32,7 +32,7 @@ export default class EditReviewModal extends Component {
 		return (
 			<Modal open={true} closeIcon={true} onClose={this.props.closeModal}>
 				<Header>
-					<h3> Enter updated info</h3>
+					<h3> Enter updated review info</h3>
 				</Header>
 				<Modal.Content>
 					<Form onSubmit={this.handleSubmit}>
@@ -41,7 +41,7 @@ export default class EditReviewModal extends Component {
 							type="text"
 							name="title"
 							value={this.state.title}
-							placeholder="Enter a title"
+							placeholder="Enter updated title"
 							onChange={this.handleChange}
 						/>
 						<Label> Review: </Label>
@@ -49,7 +49,7 @@ export default class EditReviewModal extends Component {
 							type="text"
 							name="review"
 							value={this.state.review}
-							placeholder="Enter a review"
+							placeholder="Enter an updated review"
 							onChange={this.handleChange}
 						/>
 						<Label> Location: </Label>
@@ -57,7 +57,7 @@ export default class EditReviewModal extends Component {
 							type="text"
 							name="location"
 							value={this.state.location}
-							placeholder="Enter a location"
+							placeholder="Enter an updated location"
 							onChange={this.handleChange}
 						/>
 						<Modal.Actions>
