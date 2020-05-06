@@ -1,8 +1,21 @@
 body {
   background-color: mistyrose;
+  display: flex;
+  flex-direction: column;
 }
 
 h2 {
+	display: flex;
+	flex-direction: center;
+	font-family: Coronetscript, cursive;
+	font-style: italic;
+	color: cadetblue;
+}
+
+h3 {
+	display: block;
+	flex-direction: center;
+	flex-flow: column;
 	font-family: Coronetscript, cursive;
 	font-style: italic;
 	color: cadetblue;
@@ -16,6 +29,13 @@ p {
 	font-family: Coronetscript, cursive;
 }
 
-#ui-label {
+.App > form > div > ui-segment {
+	display: flex;
 	font-family: Coronetscript, cursive;
 }
+
+.div > .ui-segment {
+	display: flex;
+	flex-direction: column;
+}
+

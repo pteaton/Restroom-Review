@@ -19,6 +19,12 @@ export default function ReviewList(props) {
 					<Card.Description>
 						{review.review}
 					</Card.Description>
+					<Card.Description>
+						{review.location}
+					</Card.Description>
+					<Card.Description>
+						{review.date_posted}
+					</Card.Description>
 				</Card.Content>
 				<Card.Content textAlign={"center"}>
 					<Button

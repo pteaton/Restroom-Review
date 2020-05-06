@@ -145,7 +145,7 @@ export default class ReviewContainer extends Component {
 		
 		return(
 			<React.Fragment>
-				<h2> Check out these Reviews </h2>
+				<h2> Check out these Restroom Reviews </h2>
 				<NewReviewForm createReview={this.createReview} />
 				<ReviewList
 					reviews={this.state.reviews}

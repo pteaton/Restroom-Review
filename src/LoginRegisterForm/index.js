@@ -94,7 +94,7 @@ export default class LoginRegisterForm extends Component {
           this.state.action === "Login"
           ?
           <p>
-            Need an account? Sign up here! <span className="fake-link" onClick={this.switchForm}>(here)</span>.
+            No account? Sign up here! <span className="fake-link" onClick={this.switchForm}>(here)</span>.
           </p>
           :
           <p>
